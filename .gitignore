@@ -1,0 +1,6 @@
+*.pyc
+*.sw[a-z]
+*.pyc
+*.DS_Store
+.idea
+.env
