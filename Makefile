@@ -7,6 +7,7 @@ deps:
 setup: deps
 		@python manage.py syncdb
 		@python manage.py migrate
+		@git remote add heroku git@heroku.com:projetodom.git
 
 run:
 		@python manage.py runserver 0.0.0.0:8000
