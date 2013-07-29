@@ -1,8 +1,11 @@
 # Django settings for dom project.
 import os
+import sys
+
 import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -102,9 +105,7 @@ ROOT_URLCONF = 'dom.urls'
 WSGI_APPLICATION = 'dom.wsgi.application'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    os.path.join(BASE_DIR, 'templates'),
 )
 
 INSTALLED_APPS = (
@@ -115,6 +116,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+
+    'south',
+
+    'launch',
 )
 
 # A sample logging configuration. The only tangible logging
