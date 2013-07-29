@@ -7,7 +7,7 @@ from launch.models import LaunchUser
 
 class LaunchSignUpView(CreateView):
     model = LaunchUser
-    template_name = "dom/launch_signup.html"
+    template_name = "launch/launch_signup.html"
     success_url = reverse_lazy('launch:index')
 
     def form_valid(self, form):

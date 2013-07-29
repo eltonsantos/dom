@@ -1,8 +1,14 @@
 <!DOCTYPE html>
+{% load google %}
 <html>
 <head lang="pt-BR">
     <meta charset="utf-8" />
-    <title>Projeto DoM</title>
+    {% block extra_meta %}
+    {% endblock %}
+    <title>Projeto DoM {% block subtitle %}{% endblock %}</title>
+    {% block extra_head %}
+    {% endblock %}
+    {% google_analytics %}
 </head>
 <body>
     {% if messages %}
@@ -12,9 +18,11 @@
         {% endfor %}
         </ul>
     {% endif %}
-    <form action="{% url "launch:index" %}" method="post">{% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Cadastrar" />
-    </form>
+
+    {% block content %}
+    {% endblock %}
+
+    {% block extra_body %}
+    {% endblock %}
 </body>
 </html>
