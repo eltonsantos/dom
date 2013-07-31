@@ -1,8 +1,41 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Projeto DOM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap -->
+    {% load staticfiles %}
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/launch.css' %}" />
+  </head>
+  <body>
 
-{% block content %}
-    <form action="{% url "launch:index" %}" method="post">{% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Cadastrar" />
-    </form>
-{% endblock %}
+	<div class="container">
+		<div class="row">
+
+			<div class="img-logo">
+				<h3 class="titulo">Projeto</h3>
+				<img src="{% static 'images/logo_dom.png' %}" alt="" />
+				<p class="slogan">Cadastre-se e descubra seu DoM!</p>
+			</div>
+
+			<div class="span4 offset1 form-login">
+	          	<div class="alert alert-error">
+	                <a class="close" data-dismiss="alert" href="#">x</a>Digite um email v&aacute;lido
+	            </div>
+				<form method="POST" action="{% url "launch:index" %}" accept-charset="UTF-8">
+				{% include "launch_contact.html" %}
+				<button type="submit" name="submit" class="btn btn-info btn-block">
+					Cadastrar
+				</button>
+				</form>    
+			</div>
+		</div>
+	</div>
+
+    <!-- JavaScript plugins (requires jQuery) -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  </body>
+</html>

@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 # Django settings for dom project.
 import os
 import sys
@@ -69,6 +72,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
+    "/apps/launch/media",
 )
 
 # List of finder classes that know how to find static files in

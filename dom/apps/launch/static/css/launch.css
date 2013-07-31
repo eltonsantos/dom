@@ -1,0 +1,9 @@
+* {margin: 0px; padding: 0px;}
+
+body {background: url(../img/bg_fundo.jpg) no-repeat; background-color: #E9F7F8; }
+
+h3.titulo {color: #666; font-family: "Trebuchet MS";}
+.img-logo {margin: 180px 0 0 100px; float: left;}
+p.slogan {font-size: 16px; font-style:italic; font-family: "Trebuchet MS"; color: #666; margin-top: 10px;}
+
+.form-login {background-color: #E9F7F8; border: 0px; float: right; margin: 230px 100px 0 0;}
