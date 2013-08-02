@@ -4,7 +4,10 @@ clean:
 deps:
 		@pip install -r requirements.txt
 
-setup: deps
+settings:
+	cp dom/local_settings.sample.py dom/local_settings.py
+
+setup: deps settings
 		@python manage.py syncdb
 		@python manage.py migrate
 		@git remote add heroku git@heroku.com:projetodom.git
